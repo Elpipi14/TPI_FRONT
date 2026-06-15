@@ -108,7 +108,7 @@
   font-size: 13px;
   font-weight: 800;
   white-space: nowrap;
-  width: 91px;
+  width: auto;
 }
 
 .status-pendiente {
