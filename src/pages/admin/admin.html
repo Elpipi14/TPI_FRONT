@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel Admin - Food Store</title>
+
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="./admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="admin-page">
+    <header id="main-header">
+      <h1>
+        <a href="/" class="logo-link">Food Store</a>
+      </h1>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="/">Inicio</a></li>
+
+          <li id="admin-nav-item">
+            <a href="/src/pages/admin/admin.html">Panel Admin</a>
+          </li>
+
+          <li id="user-menu-container">
+            <a href="/src/pages/auth/login/login.html" id="user-link">
+              <i class="fa-solid fa-user"></i>
+            </a>
+
+            <div id="user-dropdown" class="user-dropdown hidden">
+              <a href="#" id="profile-link" class="dropdown-item">Perfil</a>
+              <button id="logout-button" class="dropdown-item">Cerrar sesión</button>
+            </div>
+          </li>
+
+          <li>
+            <button id="profile-logout-btn" class="logout-btn">Cerrar sesión</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <nav class="admin-section-menu" aria-label="Menú del panel admin">
+        <a href="#admin-dashboard">
+          <i class="fa-solid fa-chart-column"></i>
+          Dashboard
+        </a>
+
+        <a href="#admin-categories">
+          <i class="fa-solid fa-folder"></i>
+          Categorías
+        </a>
+
+        <a href="#admin-products">
+          <i class="fa-solid fa-burger"></i>
+          Productos
+        </a>
+
+        <a href="#admin-orders">
+          <i class="fa-solid fa-box"></i>
+          Pedidos
+        </a>
+
+        <a href="/src/pages/store/home/home.html">
+          <i class="fa-solid fa-store"></i>
+          Ver tienda
+        </a>
+      </nav>
+
+      <section id="admin-dashboard">
+        <h1>Panel Admin</h1>
+        <div id="dashboard-stats" class="dashboard-stats"></div>
+        <div id="dashboard-summary" class="dashboard-summary"></div>
+      </section>
+
+      <section id="admin-categories">
+        <div class="section-title-row">
+          <h2>Gestión de categorías</h2>
+
+          <button type="button" id="open-category-modal-btn" class="table-btn">
+            Nueva categoría
+          </button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Creada</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody id="categories-table-body"></tbody>
+        </table>
+      </section>
+
+      <section id="admin-products">
+        <div class="section-title-row">
+          <h2>Gestión de productos</h2>
+
+          <button type="button" id="open-product-modal-btn" class="table-btn">
+            Nuevo producto
+          </button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody id="products-table-body"></tbody>
+        </table>
+      </section>
+
+      <section id="admin-orders">
+        <div class="section-title-row">
+          <h2>Gestión de pedidos</h2>
+
+          <label for="order-status-filter">Estado</label>
+          <select id="order-status-filter"></select>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Pedido</th>
+              <th>Usuario</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+              <th>Pago</th>
+              <th>Total</th>
+              <th>Ver</th>
+            </tr>
+          </thead>
+
+          <tbody id="orders-table-body"></tbody>
+        </table>
+
+        <div id="admin-orders-pagination" class="pagination-controls"></div>
+      </section>
+
+      <div id="admin-order-modal" class="modal hidden">
+        <div class="modal-content order-detail-modal">
+          <button type="button" id="close-admin-order-modal" class="modal-close">
+            &times;
+          </button>
+
+          <div id="admin-order-modal-body"></div>
+        </div>
+      </div>
+
+      <div id="category-modal" class="modal hidden">
+        <div class="modal-content category-form-modal">
+          <button type="button" id="close-category-modal" class="modal-close">
+            &times;
+          </button>
+
+          <form id="category-form" class="admin-inline-form">
+            <h3 id="category-form-title">Nueva categoría</h3>
+
+            <div class="form-field">
+              <label for="category-name">Nombre</label>
+              <input type="text" id="category-name" maxlength="60" required />
+            </div>
+
+            <div class="form-field">
+              <label for="category-description">Descripción</label>
+              <input type="text" id="category-description" maxlength="180" required />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit">Guardar categoría</button>
+
+              <button type="button" id="cancel-category-edit" class="secondary-btn">
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="product-modal" class="modal hidden">
+        <div class="modal-content product-form-modal">
+          <button type="button" id="close-product-modal" class="modal-close">
+            &times;
+          </button>
+
+          <form id="product-form" class="admin-grid-form">
+            <h3 id="product-form-title">Nuevo producto</h3>
+
+            <div class="form-field">
+              <label for="product-name">Nombre</label>
+              <input type="text" id="product-name" maxlength="60" required />
+            </div>
+
+            <div class="form-field">
+              <label for="product-price">Precio</label>
+              <input type="number" id="product-price" min="1" required />
+            </div>
+
+            <div class="form-field">
+              <label for="product-stock">Stock</label>
+              <input type="number" id="product-stock" min="0" required />
+            </div>
+
+            <div class="form-field">
+              <label for="product-category">Categoría</label>
+              <select id="product-category" required></select>
+            </div>
+
+            <div class="form-field form-field-wide">
+              <label for="product-image">Imagen URL</label>
+              <input type="url" id="product-image" required />
+            </div>
+
+            <div class="form-field form-field-wide">
+              <label for="product-description">Descripción</label>
+              <textarea id="product-description" maxlength="180" required></textarea>
+            </div>
+
+            <div class="checkbox-row">
+              <input type="checkbox" id="product-available" checked />
+              <label for="product-available">Disponible</label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit">Guardar producto</button>
+
+              <button type="button" id="cancel-product-edit" class="secondary-btn">
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Food Store. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="./admin.ts"></script>
+  </body>
+</html>

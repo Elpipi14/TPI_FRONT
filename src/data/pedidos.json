@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1001,
+    "userId": 2,
+    "userEmail": "usuario@foodstore.com",
+    "date": "2026-06-10T20:30:00",
+    "status": "ENTREGADO",
+    "items": [
+      {
+        "productId": 1,
+        "name": "Pizza Muzzarella",
+        "price": 4500,
+        "quantity": 1,
+        "subtotal": 4500
+      },
+      {
+        "productId": 5,
+        "name": "Gaseosa 500ml",
+        "price": 1300,
+        "quantity": 2,
+        "subtotal": 2600
+      }
+    ],
+    "paymentMethod": "TARJETA",
+    "total": 7100
+  },
+  {
+    "id": 1002,
+    "userId": 2,
+    "userEmail": "usuario@foodstore.com",
+    "date": "2026-06-12T21:15:00",
+    "status": "PENDIENTE",
+    "items": [
+      {
+        "productId": 8,
+        "name": "Empanadas de Carne x6",
+        "price": 3300,
+        "quantity": 1,
+        "subtotal": 3300
+      }
+    ],
+    "paymentMethod": "EFECTIVO",
+    "total": 3300
+  }
+]

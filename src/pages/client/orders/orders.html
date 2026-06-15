@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../style.css" />
+    <link rel="stylesheet" href="./orders.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Mis pedidos - Food Store</title>
+  </head>
+
+  <body class="orders-page">
+    <header id="main-header">
+      <h1><a href="/" class="logo-link">Food Store</a></h1>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="/">Inicio</a></li>
+
+          <li id="admin-nav-item" class="hidden">
+            <a href="/src/pages/admin/admin.html">Panel Admin</a>
+          </li>
+
+          <li id="user-menu-container">
+            <a href="/src/pages/client/user.html" id="user-link">
+              <i class="fa-solid fa-user"></i>
+            </a>
+
+            <div id="user-dropdown" class="user-dropdown hidden">
+              <a href="#" id="profile-link" class="dropdown-item">Perfil</a>
+              <button id="logout-button" class="dropdown-item">Cerrar sesión</button>
+            </div>
+          </li>
+
+          <li>
+            <a href="/src/pages/store/cart/cart.html" id="cart-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="orders-main">
+      <section class="orders-header">
+        <div>
+          <p class="section-label">Historial</p>
+          <h2>Mis pedidos</h2>
+        </div>
+
+        <label class="orders-filter" for="orders-status-filter">
+          Estado
+          <select id="orders-status-filter">
+            <option value="TODOS">Todos</option>
+            <option value="PENDIENTE">Pendientes</option>
+            <option value="EN_PREPARACION">En preparación</option>
+            <option value="ENTREGADO">Entregados</option>
+            <option value="CANCELADO">Cancelados</option>
+          </select>
+        </label>
+      </section>
+
+      <section id="orders-container" class="orders-container"></section>
+      <div id="orders-pagination" class="orders-pagination"></div>
+    </main>
+
+    <div id="order-modal" class="order-modal hidden" role="dialog" aria-modal="true">
+      <article class="order-modal-content">
+        <button type="button" id="close-order-modal" class="modal-close" aria-label="Cerrar detalle">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div id="order-modal-body"></div>
+      </article>
+    </div>
+
+    <script type="module" src="./orders.ts"></script>
+  </body>
+</html>

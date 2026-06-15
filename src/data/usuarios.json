@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nombre": "Administrador Food Store",
+    "celular": "1122334455",
+    "email": "admin@foodstore.com",
+    "password": "admin123",
+    "role": "ADMIN"
+  },
+  {
+    "id": 2,
+    "nombre": "Usuario Demo",
+    "celular": "1199887766",
+    "email": "usuario@foodstore.com",
+    "password": "usuario123",
+    "role": "USUARIO"
+  }
+]

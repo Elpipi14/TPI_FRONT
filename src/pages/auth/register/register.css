@@ -1,0 +1,98 @@
+/* CENTRAR TODO EN PANTALLA */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* CONTENEDOR */
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* FORM */
+.register-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--color-surface);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px var(--color-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* TITLE */
+.register-form h1 {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+}
+
+/* LABELS */
+.register-form label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* INPUTS */
+.register-form input,
+.register-form select {
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.15);
+}
+
+/* BUTTON */
+.register-form button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.register-form button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.register-form button:active {
+  transform: scale(0.98);
+}
+
+/* TEXT */
+.register-form p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: var(--color-text-light);
+}
+
+.register-form a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-form a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../style.css" />
+    <!-- ICONOS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <title>Food Store</title>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header id="main-header">
+      <h1><a href="/" class="logo-link">Food Store</a></h1>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="/">Inicio</a></li>
+
+          <li id="admin-nav-item" class="hidden">
+            <a href="/src/pages/admin/admin.html">Panel Admin</a>
+          </li>
+
+          <li id="user-menu-container">
+            <a href="/src/pages/auth/login/login.html" id="user-link">
+              <i class="fa-solid fa-user"></i>
+            </a>
+
+            <div id="user-dropdown" class="user-dropdown hidden">
+              <a href="#" id="profile-link" class="dropdown-item">Perfil</a>
+              <button id="logout-button" class="dropdown-item">Cerrar sesion</button>
+            </div>
+          </li>
+
+          <li>
+            <a href="/src/pages/store/cart/cart.html" id="cart-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- CATEGORIES -->
+    <aside>
+      <h2>Categorias</h2>
+      <ul id="container-categories"></ul>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+      <!-- SEARCH -->
+      <section>
+        <form id="search-form">
+          <label for="search">Buscar comida:</label>
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Hamburguesa"
+          />
+          <label for="sort-products">Ordenar:</label>
+          <select id="sort-products" name="sort-products">
+            <option value="name-asc">Nombre A-Z</option>
+            <option value="name-desc">Nombre Z-A</option>
+            <option value="price-asc">Menor precio</option>
+            <option value="price-desc">Mayor precio</option>
+          </select>
+          <button type="submit">Buscar</button>
+        </form>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section>
+        <h2>Productos</h2>
+        <article id="container-products"></article>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="main-footer">
+      <p>&copy; 2026 Food Store. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT PRINCIPAL -->
+    <script type="module" src="../../../main.ts"></script>
+  </body>
+</html>

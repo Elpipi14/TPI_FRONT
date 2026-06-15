@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./register.css" />
+    <link rel="stylesheet" href="../../../style.css" />
+    <title>Registro</title>
+  </head>
+  <body>
+    <header id="main-header">
+      <h1><a href="/" class="logo-link">Food Store</a></h1>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li id="user-menu-container">
+            <a href="/src/pages/auth/login/login.html" id="user-link">
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <div id="user-dropdown" class="user-dropdown hidden">
+              <a href="#" id="profile-link" class="dropdown-item">Perfil</a>
+              <button id="logout-button" class="dropdown-item">Cerrar sesion</button>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <form id="register-form" class="register-form">
+        <h1>Crear cuenta</h1>
+
+        <label for="name">Nombre</label>
+        <input type="text" id="name" placeholder="Tu nombre" maxlength="60" required />
+
+        <label for="phone">Celular</label>
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Ej: 1122334455"
+          inputmode="numeric"
+          minlength="8"
+          maxlength="15"
+          required
+        />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="email@example.com" required />
+
+        <label for="password">Contrasena</label>
+        <input type="password" id="password" placeholder="Minimo 8 caracteres" minlength="8" required />
+
+        <p class="form-note">Los nuevos registros se crean con rol USUARIO. El rol ADMIN queda reservado para usuarios precargados.</p>
+
+        <button type="submit">Registrarse</button>
+
+        <p>
+          Ya tenes cuenta?
+          <a href="/src/pages/auth/login/login.html">Iniciar sesion</a>
+        </p>
+      </form>
+    </div>
+
+    <script type="module" src="./register.ts"></script>
+  </body>
+</html>

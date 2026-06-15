@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Carrito - Food Store</title>
+  </head>
+  <body>
+    <header id="main-header">
+      <h1><a href="/" class="logo-link">Food Store</a></h1>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li id="admin-nav-item" class="hidden">
+            <a href="/src/pages/admin/admin.html">Panel Admin</a>
+          </li>
+          <li id="user-menu-container">
+            <a href="/src/pages/auth/login/login.html" id="user-link">
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <div id="user-dropdown" class="user-dropdown hidden">
+              <a href="#" id="profile-link" class="dropdown-item">Perfil</a>
+              <button id="logout-button" class="dropdown-item">Cerrar sesion</button>
+            </div>
+          </li>
+          <li>
+            <a href="/src/pages/store/cart/cart.html" id="cart-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="cart-page">
+      <section class="cart-section">
+        <h1>Mi carrito</h1>
+        <div id="cart-container"></div>
+        <div id="cart-total" class="cart-total"></div>
+
+      <div class="checkout-section">
+
+        <div id="checkout-options" class="checkout-options">
+          <label for="payment-method">Forma de pago</label>
+          <select id="payment-method" required>
+            <option value="EFECTIVO">Efectivo</option>
+            <option value="TRANSFERENCIA">Transferencia</option>
+            <option value="TARJETA">Tarjeta</option>
+          </select>
+        </div>
+
+        <div class="cart-buttons">
+          <button id="clear-cart-btn" type="button">Vaciar carrito</button>
+          <button id="checkout-btn" type="button">Confirmar pedido</button>
+        </div>
+      </div>
+      </section>
+    </main>
+
+    <script type="module" src="./cart.ts"></script>
+  </body>
+</html>

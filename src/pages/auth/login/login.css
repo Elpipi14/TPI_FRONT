@@ -1,0 +1,108 @@
+:root {
+    --color-primary: #ff6347;
+    --color-background: #f0f0f0;
+    --color-text: #333;
+    --color-secondary: #fff;
+    --color-border: #ddd;
+    --color-focus: #ff4500;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-background);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor centrado real */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card login */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background-color: var(--color-secondary);
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Títulos */
+.login-form h1 {
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+.login-form p {
+    color: var(--color-text);
+    text-align: left;
+    font-size: 14px;
+}
+
+.login-form a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Labels */
+label {
+    color: var(--color-text);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus moderno */
+input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+    outline: none;
+}
+
+/* Botón */
+button {
+    padding: 12px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+/* Hover */
+button:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+/* Click */
+button:active {
+    transform: scale(0.98);
+}

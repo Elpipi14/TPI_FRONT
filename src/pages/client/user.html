@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./user.css" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Panel de usuario - Food Store</title>
+  </head>
+
+  <body>
+    <header id="main-header">
+      <h1><a href="/" class="logo-link">Food Store</a></h1>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="/">Inicio</a></li>
+
+          <li id="user-menu-container">
+            <a href="/src/pages/client/user.html" id="user-link">
+              <i class="fa-solid fa-user"></i>
+            </a>
+
+            <div id="user-dropdown" class="user-dropdown hidden">
+              <a href="#" id="profile-link" class="dropdown-item">Perfil</a>
+              <button id="logout-button" class="dropdown-item">Cerrar sesion</button>
+            </div>
+          </li>
+
+          <li>
+            <a href="/src/pages/store/cart/cart.html" id="cart-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="user-panel">
+      <section class="panel-header">
+        <h2>Mi perfil</h2>
+        <p>Gestiona tu informacion personal y revisa tus pedidos.</p>
+      </section>
+
+      <section class="panel-grid">
+        <!-- PROFILE CARD -->
+        <article class="card profile-card">
+          <div class="card-title">
+            <i class="fa-solid fa-user"></i>
+            <h3>Informacion del perfil</h3>
+          </div>
+
+          <div class="profile-info">
+            <p><strong>Email:</strong> <span id="profile-email"></span></p>
+            <p><strong>Celular:</strong> <span id="profile-phone"></span></p>
+            <p><strong>Rol:</strong> <span id="profile-role"></span></p>
+          </div>
+
+          <div class="profile-actions">
+  <button id="profile-logout-btn" class="logout-btn">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    Cerrar sesion
+  </button>
+</div>
+        </article>
+
+        <!-- ORDERS CARD -->
+        <article class="card orders-card">
+          <div class="card-title">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <h3>Mis pedidos</h3>
+          </div>
+
+          <div id="orders-list" class="orders-list">
+            <p class="empty-message">Todavia no tenes pedidos.</p>
+          </div>
+          <div id="orders-pagination" class="pagination-controls"></div>
+          <a href="/src/pages/client/orders/orders.html" class="history-link">Ver historial completo</a>
+        </article>
+
+        <!-- EDIT CARD -->
+        <article class="card edit-card">
+          <div class="card-title">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <h3>Editar mis datos</h3>
+          </div>
+
+          <form id="edit-user-form" class="edit-form">
+            <label for="new-email">Nuevo email</label>
+            <input
+              type="email"
+              id="new-email"
+              name="new-email"
+              placeholder="Ingresa tu nuevo email"
+            />
+
+            <label for="new-phone">Nuevo celular</label>
+            <input
+              type="tel"
+              id="new-phone"
+              name="new-phone"
+              placeholder="Ingresa tu nuevo celular"
+            />
+
+            <label for="new-password">Nueva contrasena</label>
+            <input
+              type="password"
+              id="new-password"
+              name="new-password"
+              placeholder="Ingresa tu nueva contrasena"
+            />
+
+            <button type="submit">Guardar cambios</button>
+          </form>
+        </article>
+      
+      </section>
+    </main>
+
+    <script type="module" src="/src/pages/client/user.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Detalle de producto - Food Store</title>
+  </head>
+
+  <body>
+    <header id="main-header">
+      <h1><a href="/" class="logo-link">Food Store</a></h1>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="/">Inicio</a></li>
+
+          <li id="user-menu-container">
+            <a href="/src/pages/auth/login/login.html" id="user-link">
+              <i class="fa-solid fa-user"></i>
+            </a>
+
+            <div id="user-dropdown" class="user-dropdown hidden">
+              <a href="#" id="profile-link" class="dropdown-item">Perfil</a>
+              <button id="logout-button" class="dropdown-item">Cerrar sesion</button>
+            </div>
+          </li>
+
+          <li>
+            <a href="/src/pages/store/cart/cart.html" id="cart-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <aside>
+      <h2>Categorias</h2>
+      <ul id="container-categories"></ul>
+    </aside>
+
+    <main class="product-page">
+      <section id="product-detail-container" class="product-detail">
+        <div class="product-image-box">
+          <img id="product-image" src="" alt="" />
+        </div>
+
+        <div class="product-info-box">
+          <p>Categoria: <span id="product-category"></span></p>
+
+          <h1 id="product-title"></h1>
+
+          <p id="product-description"></p>
+
+          <p>Precio: <span id="product-price"></span></p>
+
+          <p>Stock: <span id="product-stock"></span></p>
+
+          <div class="quantity-box">
+            <label>Cantidad</label>
+
+            <div class="quantity-controls">
+              <button id="minus-btn">-</button>
+              <span id="quantity-value">1</span>
+              <button id="plus-btn">+</button>
+            </div>
+          </div>
+
+          <button id="add-product-btn">Agregar al carrito</button>
+          <button onclick="history.back()" class="back-btn">
+            ← Volver a productos
+          </button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./product.ts"></script>
+  </body>
+</html>

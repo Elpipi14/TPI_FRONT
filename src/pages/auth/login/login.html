@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/src/assets/favicon.ico" />
+    <link rel="stylesheet" href="./login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Iniciar sesion</title>
+  </head>
+  <body>
+<header id="main-header">
+      <h1><a href="/" class="logo-link">Food Store</a></h1>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="/">Inicio</a></li>
+
+          <li id="user-menu-container">
+            <a href="/src/pages/auth/login/login.html" id="user-link">
+              <i class="fa-solid fa-user"></i>
+            </a>
+
+            <div id="user-dropdown" class="user-dropdown hidden">
+              <a href="#" id="profile-link" class="dropdown-item">Perfil</a>
+              <button id="logout-button" class="dropdown-item">Cerrar sesion</button>
+            </div>
+          </li>
+
+          <li>
+            <a href="/src/pages/store/cart/cart.html" id="cart-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <div class="container">
+      <form class="login-form" id="login-form">
+        <h1>Bienvenido a Food Store</h1>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="email@example.com" required />
+
+        <label for="password">Contrasena:</label>
+        <input type="password" id="password" name="password" placeholder="minimo 8 caracteres" required />
+
+        <button type="submit">Continuar</button>
+
+        <p class="register">
+          No tenes cuenta? <a href="/src/pages/auth/register/register.html">Registrate</a>
+        </p>
+      </form>
+    </div>
+
+<script type="module" src="/src/pages/auth/login/login.ts"></script>  </body>
+</html>
